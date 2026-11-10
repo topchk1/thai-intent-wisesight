@@ -1,0 +1,50 @@
+intent_classes:
+  - Question
+  - Request
+  - Recommendation
+  - Sarcasm
+  - Expression
+  - Assertion
+  - Miscellaneous
+
+data:
+  labels_path: data/reference_labels.csv
+
+modelling:
+  preprocess:
+    url_token: "<URL>"
+    user_token: "<USER>"
+    collapse_whitespace: true
+  hashtag_modes: [keep, remove]
+  models:
+    bilstm: {kind: bilstm, embedding_dim: 300, hidden_dim: 256, dropout: 0.3, min_freq: 2}
+    mbert: {kind: hf, pretrained: bert-base-multilingual-cased}
+    wangchanberta: {kind: hf, pretrained: airesearch/wangchanberta-base-att-spm-uncased,
+                    space_token: "<_>", lowercase: true}
+
+  train:
+    max_len: 256
+    batch_size: 16
+    lr: 3.0e-5
+    max_epochs: 10
+    early_stopping_patience: 3
+    warmup_ratio: 0.1
+    weight_decay: 0.01
+    class_weight_power: 1.0
+    best_metric: loss
+  train_overrides:
+    bilstm:
+      lr: 1.0e-3
+  grid:
+    seeds: [42, 43, 44, 45, 46]
+
+  tune:
+    hashtag_mode: keep
+    seeds: [42, 43, 44]
+    fixed: {best_metric: macro_f1}
+    grid:
+      class_weight_power: [1.0, 0.5, 0.0]
+      lr:
+        bilstm: [3.0e-4, 1.0e-3, 3.0e-3]
+        mbert: [2.0e-5, 3.0e-5, 5.0e-5]
+        wangchanberta: [2.0e-5, 3.0e-5, 5.0e-5]

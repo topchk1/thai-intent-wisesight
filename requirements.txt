@@ -1,0 +1,10 @@
+numpy==2.1.2
+pandas
+pyyaml
+scikit-learn
+pythainlp
+torch==2.8.0
+transformers==5.18.0
+accelerate
+sentencepiece
+protobuf
