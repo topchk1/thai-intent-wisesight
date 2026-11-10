@@ -45,7 +45,7 @@ Code: MIT. Labels, codebook and prompt: CC0 1.0. Post texts are from the Wisesig
 ## Citation
 
 ```bibtex
-@inproceedings{changsorn2026intent,
+@inproceedings{thai-intent-wisesight,
   title     = {Intent Classification of Thai Social Media Text Using Deep Learning Models and Large Language Model Annotation},
   author    = {Changsorn, Kritsaya and Jareevongpiboon, Wirat},
   booktitle = {Proceedings of the 10th International Conference on Natural Language Processing and Information Retrieval (NLPIR 2026)},
