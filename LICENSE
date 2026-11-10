@@ -19,7 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-The labels, codebook and prompt are released under CC0 1.0
-(https://creativecommons.org/publicdomain/zero/1.0/). The post texts are from the
-Wisesight Sentiment corpus (https://doi.org/10.5281/zenodo.3457446), also CC0 1.0.
